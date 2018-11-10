@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="CSS/bootstrap.css" />
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Los Magnificos Subastas Online</title>
-<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+    <meta charset="ISO-8859-1" />
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#locales").change(function () {
+                var selectedOption = $('#locales').val();
+                if (selectedOption !== ''){
+                    window.location.replace('locale?lang=' + selectedOption);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
-	<h1 th:text="#{welcome.text}"></h1>
-<body>
-	<img src="images/logo los magnificos.png" alt="logo-LM"
-		class="img-fluid">
-	<h2 class="text-danger">Los Magnificos Subastas Online</h2>
-	<h2></h2>
-	<div class="p-3 mb-2 bg-info text-white">
-		<h3>Aplicacion Web para subastas de bienes y servicios</h3>
-	</div>
-	<div class="p-3 mb-2 bg-warning text-dark">
-		<p>para poder entrar aqui necesitas tener un usuario y contraseña
-		</p>
-		<button>iniciar sesion</button>
-		<button>registrarse</button>
-	</div>
-	<ul>
-		<li><a href="about.html">como subastar en esta pagina</a></li>
-		<li><a href="newAunction.html">crear nueva subasta</a></li>
-		<li><a href="guest.html">ver una subasta</a></li>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.945443316655!2d-58.28071108532982!3d-34.70655597045252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a331fe293db393%3A0x2a0a79e3ff445dfe!2sUniversidad+Nacional+de+Quilmes!5e0!3m2!1ses-419!2sar!4v1539634497928"
-			width="600" height="450" frameborder="0" style="border: 0"
-			allowfullscreen></iframe>
-	</ul>
-	<p> subastas recientes:</p>
-	<img alt="mesaCuriosa" src="images/mesaPillona.png">
-</body>
-<footer class="container-fluid text-center">
-	<p>Grupo G -Coronel Luis . Rodriguez Alan- Desarrollo de
-		Aplicaciones 2018 -</p>
-</footer>
-
-
-
+<h1 th:text="#{greeting}"></h1>
+ 
+<br /><br />
+<span th:text="#{lang.change}"></span>:
+<select id="locales">
+    <option value=""></option>
+    <option value="en" th:text="#{lang.eng}"></option>
+    <option value="fr" th:text="#{lang.fr}"></option>
+    <option value="es" th:text="#{lang.es}"></option>
+</select>
 </body>
 </html>
