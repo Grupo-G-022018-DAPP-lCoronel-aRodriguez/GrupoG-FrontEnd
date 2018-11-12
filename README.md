@@ -1,11 +1,27 @@
-# GrupoG- subasteando-FrontEnd
-Proyecto Frontend de la materia Desarrollo de Aplicaciones. 
+# GrupoGFrontEnd
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ed4c27d86944b7ab1576f11c774994f)](https://www.codacy.com/app/luchist/GrupoG-Backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Grupo-G-022018-DAPP-lCoronel-aRodriguez/GrupoG-Backend&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.com/Grupo-G-022018-DAPP-lCoronel-aRodriguez/GrupoG-Backend.svg?branch=master)](https://travis-ci.com/Grupo-G-022018-DAPP-lCoronel-aRodriguez/GrupoG-Backend)
-[![Coverage Status](https://coveralls.io/repos/github/Grupo-G-022018-DAPP-lCoronel-aRodriguez/GrupoG-Backend/badge.svg?branch=master)](https://coveralls.io/github/Grupo-G-022018-DAPP-lCoronel-aRodriguez/GrupoG-Backend?branch=master)
-.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
-[Enunciado](https://docs.google.com/document/d/1N50E7Xl4iQVW8y7XOkl7L__GOLpxkDCGYL7tcmMiHcE/edit)
+## Development server
 
-[Backlog](https://trello.com/b/agb3ycLB/modelo-subastando)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
