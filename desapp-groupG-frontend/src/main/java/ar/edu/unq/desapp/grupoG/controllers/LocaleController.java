@@ -10,7 +10,7 @@ public class LocaleController {
 
 	@RequestMapping(value = "/locale", method = RequestMethod.GET)
 	   public String getLocalePage() {
-	       return "index";
+	       return "messajes_es.properties";
 	   }
 	
 }

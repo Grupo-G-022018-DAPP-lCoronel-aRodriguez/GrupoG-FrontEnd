@@ -1,4 +1,4 @@
-package ar.edu.unq.desapp.grupoG;
+package ar.edu.unq.desapp.grupoG.config;
 
 import java.util.Locale;
 
