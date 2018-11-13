@@ -21,11 +21,19 @@
  
 <br /><br />
 <span th:text="#{lang.change}"></span>:
+<select name="OS">
+   <option value="1">Windows Vista</option> 
+   <option value="2">Windows 7</option> 
+   <option value="3">Windows XP</option>
+   <option value="10">Fedora</option> 
+   <option value="11">Debian</option> 
+   <option value="12">Suse</option> 
+</select>
 <select id="locales">
-    <option value=""></option>
-    <option value="en" th:text="#{lang.eng}"></option>
-    <option value="fr" th:text="#{lang.fr}"></option>
-    <option value="es" th:text="#{lang.es}"></option>
+	<option></option>
+    <option value="en" th:text="#{lang.eng}">en</option>
+    <option value="fr" th:text="#{lang.fr}">fr</option>
+    <option value="es" th:text="#{lang.es}">es</option>
 </select>
 </body>
 </html>

@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class LocaleController {
 
+//	@RequestMapping(value = "/locale", method = RequestMethod.GET)
+//	   public String getLocalePage() {
+//	       return "my-locale";
+//	   }
+	
 	@RequestMapping(value = "/locale", method = RequestMethod.GET)
 	   public String getLocalePage() {
-	       return "messajes_es.properties";
+	       return "index";
 	   }
-	
 }
