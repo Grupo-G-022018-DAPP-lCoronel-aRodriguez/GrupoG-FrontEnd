@@ -11,7 +11,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class AppConfig extends WebMvcConfigurerAdapter {
+public class Internationalization extends WebMvcConfigurerAdapter {
 
 	/*
 	 * We need to determine default Locale of your application. We need to add the
