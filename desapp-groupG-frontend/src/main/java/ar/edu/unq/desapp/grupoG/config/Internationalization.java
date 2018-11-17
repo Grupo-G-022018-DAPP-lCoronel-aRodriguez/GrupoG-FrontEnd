@@ -28,12 +28,13 @@ public class Internationalization extends WebMvcConfigurerAdapter {
 	 * LocaleChangeInterceptor is a used to change the new Locale based on the value
 	 * of the language parameter added to a request.
 	 */
-	@Bean
-	public LocaleChangeInterceptor localeChangeInterceptor() {
-		LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
-		localeChangeInterceptor.setParamName("language");
-		return localeChangeInterceptor;
-	}
+
+	 @Bean
+	   public LocaleChangeInterceptor localeChangeInterceptor() {
+	       LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
+	       lci.setParamName("lang");
+	       return lci;
+	   }
 
 	/*
 	 * To take this effect, we need to add the LocaleChangeInterceptor into the
