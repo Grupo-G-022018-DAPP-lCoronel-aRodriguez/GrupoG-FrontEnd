@@ -29,10 +29,10 @@
 				</nav>
 				<span th:text="#{lang.change}">cambiar el idioma</span>:
 <select id="locales">
-    <option value="">seleccionar</option>
+    <option value="" th:text="#{lang.sel}">seleccionar</option>
     <option value="en" th:text="#{lang.eng}">ingles</option>
     <option value="fr" th:text="#{lang.fr}">frances</option>
-    <option label="es" th:text="#{lang.es}">esp</option>
+    <option label="es" th:text="#{lang.es}">español</option>
 </select>
 				
 			</header>
@@ -40,9 +40,9 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
+					<li><a href="index.html" th:text="#{home}">Inicio</a></li>
+					<li><a href="elements.html"th:text="#{login}">Iniciar Sesion</a></li>
+					<li><a href="generic.html"th:text="#{logon}">Registrarse</a></li>
 				</ul>
 				
 			</nav>
@@ -60,44 +60,48 @@
 			<section class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Como funciona este sitio</h2>
-						<p>con estos sencillos pasos podras publicar, subastar y participar de otras subastas en este sitio</p>
+						<h2 th:text="#{subtittle}">Ultimas Subastas</h2>
+						<p th:text="#{about}">Aqui encontraras las ultimas subastas publicadas en este sitio</p>
 					</header>
 					<div class="highlights">
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
-									<h3>Registrate / Inicia Sesion</h3>
+									<a href="#"><img src="/images/delorencito.jpg" alt="delorean" class="img-cuadrado"><span class="label">Icon</span></a>
+									<h3 th:text="#{aunction1}">Delorean de volver al futuro</h3>
 								</header>
-								<p>por politicas de privacidad y seguridad es necesario que estes autenticado para poder participar. Estas registrado? inicia sesion. Aun no tienes usuario? darse de alta </p>
+								<p th:text="#{price1}">precio: $57.273.667 </p>
+								<p th:text="#{state1}">estado: fuera de tiempo</p>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
-									<h3>Publica la subasta</h3>
+									<a href="#"><img src="/images/octocatcito.jpg" alt="octocat" class="img-cuadrado"><span class="label">Icon</span></a>
+									<h3 th:text="#{auction2}">Octocat Figurine</h3>
 								</header>
-								<p>Una vez publicada deberas indicar el horario de la subasta, para que otros usuarios sepan cuando ofertar</p>
+								<p th:text="#{price2}">Precio: $15</p>
+								<p th:text="#{state2}">estado: Nuevo</p>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
-									<h3>Tienes subastas ya publicadas?</h3>
+									<a href="#"><img alt="old computer" src="/images/portatilcita.jpg" class="img-cuadrado"><span class="label">Icon</span></a>
+									<h3 th:text="#{auction3}">Computadora portatil</h3>
 								</header>
-								<p>Puedes ver el estado de tu subasta en cualquier momento </p>
+								<p th:text="#{price3}">Precio: $2000 </p>
+								<p th:text="#{state3}">estado: usada</p>
+								
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
 									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
-									<h3>Participar en una subasta?</h3>
+									<h3>nuevas subastas?</h3>
 								</header>
-								<p>Puedes patricipar y ofertar en cualquier subasta publicada en este sitio</p>
+								<p>de aqui en adelante hay que seguir agregando mas subastas y modificando el estilo de la pagina :P</p>
 							</div>
 						</section>
 						<section>
