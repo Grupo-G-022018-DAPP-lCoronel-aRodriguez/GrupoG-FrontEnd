@@ -9,8 +9,8 @@
 
     <!-- OAuth Authentication Providers definition -->
     <bean id="google2Provider" class="org.scribe.up.provider.impl.Google2Provider">
-        <property name="key" value="{Your client ID from Google API dashboard}"/>
-        <property name="secret" value="${Your secret Key from Google API dashboard}"/>
+        <property name="key" value="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com"/>
+        <property name="secret" value="$9xIQCkkdCEuh9QsCYVp4opT8"/>
         <property name="scope" value="EMAIL_AND_PROFILE"/>
     </bean>
 
