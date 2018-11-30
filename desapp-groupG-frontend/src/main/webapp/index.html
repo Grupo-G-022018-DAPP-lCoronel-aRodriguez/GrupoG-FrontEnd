@@ -44,6 +44,8 @@
 					 <a class="btn btn-large btn-primary right" href="/userHome">Entra</a><!-- boton temporal, borrar luego -->
 					<li><a href="/userHome"th:text="#{login}">Iniciar Sesion</a></li>
 					<li><a href="generic.html"th:text="#{logon}">Registrarse</a></li>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<a href="#" onclick="signOut();">Sign out</a>
 				</ul>
 				
 			</nav>
@@ -235,6 +237,28 @@
             });
         });
     </script>
+    					<script>
+					function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+					</script>
+    
+    <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
 
 	</body>
 </html>
