@@ -1,230 +1,73 @@
-<!DOCTYPE HTML>
-<!--
-	Bassed on
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-	changed by GrupoG-daap2018
-	for desarrollo de aplicaciones UNQ 2018
--->
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>Subastas Online</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="style/main.css" />
-		
-    <meta charset="ISO-8859-1" />
-		
-	</head>
-	<body class="is-preload">
+<head>
+<meta charset="UTF-8">
+<!-- <meta charset="ISO-8859-1" />
+ -->
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<title th:text="#{title}">Los Magnificos Subastas Online</title>
+</head>
+<body>
+	<a href="index.html"><img src="images/logo los magnificos.png"
+		alt="logo-LM" class="img-fluid"></a>
+	<a class="logo" href="index.html" th:text="#{title}">Los Magnificos
+		Subastas Online</a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+	<span th:text="#{lang.change}">cambiar el idioma</span>:
+	<select id="locales">
+		<option value="" th:text="#{lang.sel}">seleccionar</option>
+		<option value="en" th:text="#{lang.eng}">ingles</option>
+		<option label="es" th:text="#{lang.es}">español</option>
+	</select>
+	<div class="p-3 mb-2 bg-info text-white">
+		<h3 th:text="#{description}">Aplicacion Web para subastas de
+			bienes y servicios</h3>
+	</div>
+	<div class="p-3 mb-2 bg-warning text-dark">
+		<div class="btn-group btn-group-justified" role="group"
+			aria-label="...">
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-default"
+					onclick="window.location.href='/about.html'">Acerca de Los
+					Magnificos</button>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-default" onclick="onSignIn">
+					<div class="g-signin2"></div>
+				</button>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-default" onclick="signOut()"">cerrar
+					sesion</button>
+			</div>
+		</div>
 
-		<!-- Header -->
-			<header id="header">
-				<a class="logo" href="index.html" th:text="#{tittle}">Subastas Online</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-				<span th:text="#{lang.change}">cambiar el idioma</span>:
-<select id="locales">
-    <option value="" th:text="#{lang.sel}">seleccionar</option>
-    <option value="en" th:text="#{lang.eng}">ingles</option>
-    <option value="fr" th:text="#{lang.fr}">frances</option>
-    <option label="es" th:text="#{lang.es}">español</option>
-</select>
-				
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html" th:text="#{home}">Inicio</a></li>
-					<li><a href="elements.html"th:text="#{login}">Iniciar Sesion</a></li>
-					<li><a href="generic.html"th:text="#{logon}">Registrarse</a></li>
-				</ul>
-				
-			</nav>
-
-		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<h1 th:text="#{tittle}">Subastas Online</h1>
-					<p th:text=#{description}>sitio web de subastas libres construido con el Template Industrius bajo licencia Creative Commons.</p>
-				</div>
-				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
-			</section>
-
-		<!-- Highlights -->
-			<section class="wrapper">
-				<div class="inner">
-					<header class="special">
-						<h2 th:text="#{subtittle}">Ultimas Subastas</h2>
-						<p th:text="#{about}">Aqui encontraras las ultimas subastas publicadas en este sitio</p>
-					</header>
-					<div class="highlights">
-						<section>
-							<div class="content">
-								<header>
-									<a href="#"><img src="/images/delorencito.jpg" alt="delorean" class="img-cuadrado"><span class="label">Icon</span></a>
-									<h3 th:text="#{aunction1}">Delorean de volver al futuro</h3>
-								</header>
-								<p th:text="#{price1}">precio: $57.273.667 </p>
-								<p th:text="#{state1}">estado: fuera de tiempo</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#"><img src="/images/octocatcito.jpg" alt="octocat" class="img-cuadrado"><span class="label">Icon</span></a>
-									<h3 th:text="#{auction2}">Octocat Figurine</h3>
-								</header>
-								<p th:text="#{price2}">Precio: $15</p>
-								<p th:text="#{state2}">estado: Nuevo</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#"><img alt="old computer" src="/images/portatilcita.jpg" class="img-cuadrado"><span class="label">Icon</span></a>
-									<h3 th:text="#{auction3}">Computadora portatil</h3>
-								</header>
-								<p th:text="#{price3}">Precio: $2000 </p>
-								<p th:text="#{state3}">estado: usada</p>
-								
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
-									<h3>nuevas subastas?</h3>
-								</header>
-								<p>de aqui en adelante hay que seguir agregando mas subastas y modificando el estilo de la pagina :P</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
-									<h3>Faucibus consequat</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-qrcode"><span class="label">Icon</span></a>
-									<h3>Accumsan viverra</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
-					</div>
-				</div>
-			</section>
-
-		<!-- CTA -->
-			<section id="cta" class="wrapper">
-				<div class="inner">
-					<h2>Curabitur ullamcorper ultricies</h2>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
-				</div>
-			</section>
-
-		<!-- Testimonials -->
-			<section class="wrapper">
-				<div class="inner">
-					<header class="special">
-						<h2>Faucibus consequat lorem</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
-					</header>
-					<div class="testimonials">
-						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="content">
-						<section>
-							<h3>Accumsan montes viverra</h3>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
-						</section>
-						<section>
-							<h4>Sem turpis amet semper</h4>
-							<ul class="alt">
-								<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-								<li><a href="#">Etiam vel lorem sed amet.</a></li>
-								<li><a href="#">Felis enim feugiat viverra.</a></li>
-								<li><a href="#">Dolor pulvinar magna etiam.</a></li>
-							</ul>
-						</section>
-						<section>
-							<h4>Magna sed ipsum</h4>
-							<ul class="plain">
-								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
-							</ul>
-						</section>
-					</div>
-					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
-					</div>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/browser.min.js"></script>
-			<script src="js/breakpoints.min.js"></script>
-			<script src="js/util.js"></script>
-			<script src="js/main.js"></script>
-			<script type="text/javascript">
+	</div>
+	<div class="list-group">
+		<a href="#" class="list-group-item list-group-item-action active"
+			th:text="#{subtittle}"> Listado de Subastas </a> <a href="#"
+			class="list-group-item list-group-item-action" th:text="#{aunction1}">
+			<img src="/images/delorencito.jpg" alt="delorean"
+			class="img-cuadrado"> Delorean de volver al futuro
+		</a> <a href="#" class="list-group-item list-group-item-action"
+			th:text="#{auction2}"> <img src="/images/octocatcito.jpg"
+			alt="octocat"> Mascota de Github
+		</a> <a href="#" class="list-group-item list-group-item-action"
+			th:text="#{auction3}"> <img alt="old computer"
+			src="/images/portatilcita.jpg" class="img-cuadrado">
+			Computadora portatil
+		</a> <a href="#" class="list-group-item list-group-item-action disabled">
+			ver mas -> </a>
+	</div>
+	<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/breakpoints.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
         $(document).ready(function() {
             $("#locales").change(function () {
                 var selectedOption = $('#locales').val();
@@ -234,7 +77,40 @@
             });
         });
     </script>
-    
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-	</body>
+	<script>
+					function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+					</script>
+
+
+	<script>
+		function signOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function() {
+				console.log('User signed out.');
+			});
+		}
+	</script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<meta name="google-signin-client_id"
+		content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
+
+
+
+</body>
+<footer class="container-fluid text-center">
+	<p>Grupo G -Coronel Luis . Rodriguez Alan- Desarrollo de
+		Aplicaciones 2018 -</p>
+</footer>
+
+
+
+</body>
 </html>
