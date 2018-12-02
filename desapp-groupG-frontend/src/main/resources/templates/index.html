@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<!-- <meta charset="ISO-8859-1" />
- -->
+<!-- <meta charset="UTF-8"> -->
+ <meta charset="ISO-8859-1" />
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
 <title th:text="#{title}">Los Magnificos Subastas Online</title>
 </head>
@@ -34,12 +33,12 @@
 					Magnificos</button>
 			</div>
 			<div class="btn-group" role="group">
-				<button type="button" class="btn btn-default" onclick="onSignIn">
-					<div class="g-signin2"></div>
+				<button type="button" class="btn btn-default">
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 				</button>
 			</div>
 			<div class="btn-group" role="group">
-				<button type="button" class="btn btn-default" onclick="signOut()"">cerrar
+				<button type="button" class="btn btn-default" onclick="signOut()">cerrar
 					sesion</button>
 			</div>
 		</div>
@@ -68,24 +67,24 @@
 	<script src="js/util.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
-        $(document).ready(function() {
-            $("#locales").change(function () {
-                var selectedOption = $('#locales').val();
-                if (selectedOption !== ''){
-                    window.location.replace('locale?lang=' + selectedOption);
-                }
-            });
-        });
-    </script>
+		$(document).ready(function() {
+			$("#locales").change(function() {
+				var selectedOption = $('#locales').val();
+				if (selectedOption !== '') {
+					window.location.replace('locale?lang=' + selectedOption);
+				}
+			});
+		});
+	</script>
 	<script>
-					function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
-					</script>
+		function onSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			console.log('Name: ' + profile.getName());
+			console.log('Image URL: ' + profile.getImageUrl());
+			console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+		}
+	</script>
 
 
 	<script>
@@ -99,8 +98,7 @@
 
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
-	<meta name="google-signin-client_id"
-		content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
 
 
 
