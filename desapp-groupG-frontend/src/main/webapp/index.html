@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<!-- <meta charset="UTF-8"> -->
- <meta charset="ISO-8859-1" />
+ <meta charset="UTF-8"> 
+<!-- <meta charset="ISO-8859-1" /> -->
+<meta name="google-signin-scope" content="profile email">
+<!-- apps's client id -->
+<meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
 
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
 <title th:text="#{title}">Los Magnificos Subastas Online</title>
+
 </head>
 <body>
 	<a href="index.html"><img src="images/logo los magnificos.png"
@@ -13,7 +17,6 @@
 	<a class="logo" href="index.html" th:text="#{title}">Los Magnificos
 		Subastas Online</a>
 	<nav>
-		<a href="#menu">Menu</a>
 	</nav>
 	<span th:text="#{lang.change}">cambiar el idioma</span>:
 	<select id="locales">
@@ -47,18 +50,21 @@
 	</div>
 	<div class="list-group">
 		<a href="#" class="list-group-item list-group-item-action active"
-			th:text="#{subtittle}"> Listado de Subastas </a> <a href="#"
-			class="list-group-item list-group-item-action" th:text="#{aunction1}">
-			<img src="/images/delorencito.jpg" alt="delorean"
-			class="img-cuadrado"> Delorean de volver al futuro
-		</a> <a href="#" class="list-group-item list-group-item-action"
-			th:text="#{auction2}"> <img src="/images/octocatcito.jpg"
-			alt="octocat"> Mascota de Github
-		</a> <a href="#" class="list-group-item list-group-item-action"
-			th:text="#{auction3}"> <img alt="old computer"
-			src="/images/portatilcita.jpg" class="img-cuadrado">
-			Computadora portatil
-		</a> <a href="#" class="list-group-item list-group-item-action disabled">
+			th:text="#{subtittle}"> Listado de Subastas </a> 
+		<a href="#"
+			class="list-group-item list-group-item-action" >
+			<img src="/images/delorencito.jpg" alt="delorean" class="img-cuadrado">
+			<p th:text="#{aunction1}"> Delorean de volver al futuro</p>
+			</a> 
+		<a href="#" class="list-group-item list-group-item-action">
+			<img src="/images/octocatcito.jpg" alt="octocat"> 
+			<p	th:text="#{auction2}"> Mascota de Github </p>
+			</a>
+		<a href="#" class="list-group-item list-group-item-action">
+			<img alt="old computer"	src="/images/portatilcita.jpg" class="img-cuadrado">
+			<p th:text="#{auction3}"> Computadora portatil</p>
+			</a>
+		<a href="#" class="list-group-item list-group-item-action disabled" th:text="#{continue}">
 			ver mas -> </a>
 	</div>
 	<!-- Scripts -->
@@ -67,6 +73,10 @@
 	<script src="js/breakpoints.min.js"></script>
 	<script src="js/util.js"></script>
 	<script src="js/main.js"></script>
+	<!-- script google login -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	
+	
 	<script type="text/javascript">
         $(document).ready(function() {
             $("#locales").change(function () {
@@ -84,11 +94,15 @@
   			console.log('Name: ' + profile.getName());
   			console.log('Image URL: ' + profile.getImageUrl());
   			console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  			
+  		  // The ID token you need to pass to your backend:
+  	        var id_token = googleUser.getAuthResponse().id_token;
+  	        console.log("ID Token: " + id_token);
 			}
 	</script>
 
 
-	<script>
+	<script type="text/javascript">
 		function signOut() {
 			var auth2 = gapi.auth2.getAuthInstance();
 			auth2.signOut().then(function() {
@@ -97,9 +111,7 @@
 		}
 	</script>
 
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
-	<meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
 
 
 
