@@ -53,6 +53,11 @@
 	</dependency>
         
 		
+	<dependency>
+		<groupId>ar.edu.unq.desapp.grupoG</groupId>
+		<artifactId>desapp-groupG-backend</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
 	</dependencies>
 
 	<build>
