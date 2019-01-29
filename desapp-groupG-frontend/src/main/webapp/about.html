@@ -1,28 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<!-- <meta name="google-signin-scope" content="profile email"> -->
+ <meta charset="UTF-8"> 
+<!-- <meta charset="ISO-8859-1" /> -->
+<meta name="google-signin-scope" content="profile email">
 <!-- apps's client id -->
-<!-- <meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com"> -->
+<meta name="google-signin-client_id" content="621338731170-1g7q31ainsvsft2lei62sums0pglu07f.apps.googleusercontent.com">
 
-<meta http-equiv="X-UA-Compatible"
-	content="IE=edge; chrome=1; FF=3; OtherUA=4" />
-<!-- copatibilidad con los navegadores -->
-
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
 <title th:text="#{title}">Los Magnificos Subastas Online</title>
-
-<meta name="description" content="ejemplo de login usando google" />
-<!-- resumen de lo que contendra la pagina -->
-<meta name="viewport" content="width=device-width" />
-<!-- fija el ancho de la pagina al del dipositivo que se este usando -->
-<base href="/" />
-<!-- es la referencia base de la pagina -->
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/css/bootstrap.min.css" />
-<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-<script type="text/javascript"
-	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -30,7 +16,8 @@
 		alt="logo-LM" class="img-fluid"></a>
 	<a class="logo" href="index.html" th:text="#{title}">Los Magnificos
 		Subastas Online</a>
-	<nav></nav>
+	<nav>
+	</nav>
 	<span th:text="#{lang.change}">cambiar el idioma</span>:
 	<select id="locales">
 		<option value="" th:text="#{lang.sel}">seleccionar</option>
@@ -61,30 +48,16 @@
 		</div>
 
 	</div>
-
-	<!-- contenido condicional  -->
-	<div class="container unauthenticated">
-		With Google: <a href="/login">click here</a>
-	</div>
-	<div class="container authenticated" style="display: none">
-		Logged in as: <span id="user"></span>
-	</div>
-
-
-	<div class="list-group">
-		<a href="#" class="list-group-item list-group-item-action active"
-			th:text="#{subtittle}"> Listado de Subastas </a> <a href="#"
-			class="list-group-item list-group-item-action"> <img
-			src="/images/delorencito.jpg" alt="delorean" class="img-cuadrado">
-			<p th:text="#{aunction1}">Delorean de volver al futuro</p>
-		</a> <a href="#" class="list-group-item list-group-item-action"> <img
-			src="/images/octocatcito.jpg" alt="octocat">
-			<p th:text="#{auction2}">Mascota de Github</p>
-		</a> <a href="#" class="list-group-item list-group-item-action"> <img
-			alt="old computer" src="/images/portatilcita.jpg"
-			class="img-cuadrado">
-			<p th:text="#{auction3}">Computadora portatil</p>
-		</a> <a href="#" class="list-group-item list-group-item-action disabled"
+	<div>
+		<p th:text="#{about}">Los Magnificos es una pagina web en la que
+			podras publicar y ofertar en subastas en linea con estos sencillos
+			pasos</p>
+		<ul class="list-group">
+			<li class="list-group-item" th:text="#{step1}">registrate</li>
+			<li class="list-group-item" th:text="#{step2}">publica</li>
+			<li class="list-group-item" th:text="#{step3}">subasta</li>
+		</ul>
+		<a href="#" class="list-group-item list-group-item-action disabled"
 			th:text="#{continue}"> ver mas -> </a>
 	</div>
 	<!-- Scripts -->
@@ -95,8 +68,8 @@
 	<script src="js/main.js"></script>
 	<!-- script google login -->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
+	
+	
 	<script type="text/javascript">
         $(document).ready(function() {
             $("#locales").change(function () {
@@ -131,9 +104,14 @@
 		}
 	</script>
 
+
+
+
+
 </body>
 <footer class="container-fluid text-center">
-	<p>Grupo G -Coronel Luis . Rodriguez Alan- Desarrollo de Aplicaciones 2018 -</p>
+	<p>Grupo G -Coronel Luis . Rodriguez Alan- Desarrollo de
+		Aplicaciones 2018 -</p>
 </footer>
 
 
